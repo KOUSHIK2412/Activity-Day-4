@@ -1,0 +1,35 @@
+4. Write a C program to  search a specified eleent in array of random elements.
+if the search  is successful then,  the program should  display the following
+1. Search is successful 
+2. the position of first occurance
+3. the position of the last occurance 
+
+
+#include<stdio.h>
+void main()
+{
+    int a[30],i,n,key,first,last,flag=0;
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
+    printf("Enter the elements\n");
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    printf("Enter the key\n");
+    scanf("%d",&key);
+    for(i=0;i<n;i++)
+    {
+        if(key==a[i])
+        {
+            if(flag==0)
+            {
+                first=i;
+                flag++;
+            }
+            last=i;
+        }
+    }
+    if(flag)
+        printf("Search Successfull\nThe first occurance = %d\nThe last occurance = %d\n",++first,++last);
+    else
+        printf("Search Failure\n");
+}
